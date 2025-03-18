@@ -31,14 +31,13 @@ RUN add-apt-repository ppa:deadsnakes/ppa -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and install pip
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python get-pip.py && \
-    rm get-pip.py
+
+
+
 
 # Install Python dependencies (Worker Template)
 COPY builder/requirements.txt /requirements.txt
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --upgrade pip && \
     pip install -r /requirements.txt --no-cache-dir && \
     rm /requirements.txt
 
