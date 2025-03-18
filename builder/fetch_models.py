@@ -12,7 +12,7 @@ def load_model(selected_model):
         while True:
             try:
                 loaded_model = WhisperModel(
-                    selected_model, device="gpu", compute_type="float16")
+                    selected_model, device="cuda", compute_type="float16")
             except (AttributeError, OSError):
                 continue
 
