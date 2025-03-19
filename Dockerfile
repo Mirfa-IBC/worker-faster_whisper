@@ -34,7 +34,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa -y && \
 
 
 
-RUN pip install ctranslate2[cuda]
+RUN pip install ctranslate2==4.4.0
 
 # Install Python dependencies (Worker Template)
 COPY builder/requirements.txt /requirements.txt
